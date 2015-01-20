@@ -13,16 +13,61 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "About", about_path %></li> 
-      <li><%= link_to "Contact Us", contact_path %></li> 
-      <li><%= link_to "About Sisu", sisu_path %></li> 
+      <%= link_to root_path do %>
+        <span class="btn btn-default navbar-btn">
+       <span class="glyphicon glyphicon-cloud"></span> 
+        Home
+    </span>    
+       <% end %>
+     
+      <%= link_to about_path do %>
+        <span class="btn btn-default navbar-btn">
+        <span class="glyphicon glyphicon-tree-deciduous"></span> 
+        About Me
+      </span>
+        <% end %>
+      <%= link_to contact_path do %>
+        <span class="btn btn-default navbar-btn">
+          <span class="glyphicon glyphicon-inbox"></span> Contact Me
+        </span>
+        <% end %> 
+      
+      <%= link_to sisu_path do %>
+        <span class="btn btn-default navbar-btn">
+        <span class= "glyphicon glyphicon-book"></span> About Sisu 
+      </span>
+      <% end %>
+    
       <% if user_signed_in? %> 
-      <li><%= link_to 'New Pin', new_pin_path %></li>
-      <li><%= link_to "Account configuration", edit_user_registration_path %></li>
-      <li><%= link_to "End Session", destroy_user_session_path, method: :delete %></li> 
+          
+            <%= link_to new_pin_path do %>
+              <span class="btn btn-default navbar-btn">
+              <span class="glyphicon glyphicon-camera"></span> New Pin
+            </span> 
+            <% end %>
+            
+          <%= link_to edit_user_registration_path do %>
+            <span class="btn btn-default navbar-btn">
+            <span class ="glyphicon glyphicon-film"></span> Account Configuration
+            </span>
+            <% end %>
+
+          
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <span class="btn btn-default navbar-btn">
+          <span class = "glyphicon glyphicon-eye-close"></span> 
+          End Session
+          </span>        
+        <% end %>
+      
       <% else %>
-      <li><%= link_to "Enter Session", new_user_session_path %></li> 
+       <%= link_to new_user_session_path do %>
+        <span class="btn btn-default navbar-btn">
+          <span class="glyphicon glyphicon-pushpin"></span>  
+          Sign In
+        </span>
+        <% end %> 
+      
       <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->

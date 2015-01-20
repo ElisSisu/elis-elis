@@ -1,12 +1,7 @@
 <div class="jumbotron center">
-<% if user_signed_in? %>
-#lols
-<% else %>
-	<p>Become a Sisocrat (Sisu Socrat!) </p>
+	<h3>Become a Sisocrat (Sisu Socrat!) </h3>
+	<p>
 	<%= link_to "Register", new_user_registration_path, class: "bbtn btn-primary btn-lg" %>
 	<%= link_to "Log in", new_user_session_path, class: "bbtn btn-primary btn-lg" %>
-</div>
-<% end %>
-<div class="jumbotron center">
-<p>Sisocrats, please procede. </p>	<%= render 'layouts/livedemo' %> 
+	</p>
 </div>
